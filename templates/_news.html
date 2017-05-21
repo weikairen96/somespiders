@@ -1,0 +1,11 @@
+<ul class="news">
+    {% for new in news %}
+    <li class="new">
+        <div class="news-content">
+            <div class="new-date">{{ new.date }}</div>
+            <div class="new-title"><a href="{{ url_for('detail_new',id=new.id) }}">{{ new.title }}</a></div>
+
+        </div>
+    </li>
+    {% endfor %}
+</ul>

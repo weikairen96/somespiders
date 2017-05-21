@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+
+{% block title %}Flasky{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+
+    <ul class="videos">
+    {% for video in videos %}
+    <li class="video">
+        <div class="video-content">
+            <p>{{ video.video_description }}</p>
+            <p>{{ video.video_url }}</p>
+            <video src={{video.video_url}} controls="controls">
+            your browser does not support the video tag
+            </video>
+
+        </div>
+    </li>
+    {% endfor %}
+    </ul>
+
+
+</div>
+
+{% endblock %}

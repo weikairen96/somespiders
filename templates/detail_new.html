@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+
+{% block title %}Flasky{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <div class="detail-new-title">{{ new.title }}</div>
+    <div class="detail-new-date">{{ new.date }}</div>
+    <div class="detail-new-body">
+        {{ new.text|safe }}
+    </div>
+    <div class="detail-new-attachment">
+        {% if new.attachments.count() != 0 %}
+        <p>附件下载：</p>
+        <ul>
+            {% for attachment in new.attachments %}
+            <li><a href="{{ attachment.url }}">{{ attachment.name }}</a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        {% endif %}
+    </div>
+
+
+
+
+
+</div>
+
+{% endblock %}
